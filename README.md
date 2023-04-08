@@ -24,7 +24,14 @@ resource "aws_eks_cluster" "demo" {
 }
 ```
 ## Network infrastructure 
+In this architecture, the AWS VPC is divided into two public subnets and two private subnets. Each public subnet has an internet gateway attached and a route table that directs traffic to the internet gateway. Each private subnet has a NAT gateway attached and a route table that directs traffic to the NAT gateway. The VPC also has a security group that controls inbound and outbound traffic.
+
+The EKS cluster has a control plane that consists of master nodes and a security group that controls inbound and outbound traffic. The worker nodes are launched in an auto scaling group and use a launch configuration that specifies the AMI, instance type, and other configuration settings. The worker nodes are also associated with a security group that controls inbound and outbound traffic.
+
+This architecture provides a highly available and scalable platform for running containerized applications on AWS.
+
 the network is configured to this graph
+
 ![image](https://user-images.githubusercontent.com/100867143/230746080-a07f1494-c4bd-41f1-bea4-28842c2098ca.png)
 
 
