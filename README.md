@@ -23,4 +23,8 @@ resource "aws_eks_cluster" "demo" {
   depends_on = [aws_iam_role_policy_attachment.demo_amazon_eks_cluster_policy]
 }
 ```
+## Network infrastructure 
+the network is configured to this graph
+![image](https://user-images.githubusercontent.com/100867143/230746080-a07f1494-c4bd-41f1-bea4-28842c2098ca.png)
+
 
